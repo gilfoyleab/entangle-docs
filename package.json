@@ -1,9 +1,10 @@
 {
-  "name": "design",
+  "name": "entangle-docs",
   "version": "0.1.0",
   "private": true,
+  "description": "Black-and-white Next.js documentation app for Entangle.",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
