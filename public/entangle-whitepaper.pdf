@@ -1,0 +1,391 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [4 0 R 6 0 R 8 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 2167 >>
+stream
+BT
+/F1 28 Tf
+72 742 Td
+(Entangle White Paper) Tj
+ET
+BT
+/F1 12 Tf
+72 716 Td
+(Version 0.1   Demo Draft) Tj
+ET
+BT
+/F1 18 Tf
+72 670 Td
+(Abstract) Tj
+ET
+BT
+/F1 12 Tf
+72 644 Td
+(Entangle is a fictional cross-chain messaging and execution protocol built to connect) Tj
+ET
+BT
+/F1 12 Tf
+72 626 Td
+(applications, validators, and relay operators across multiple blockchains through a) Tj
+ET
+BT
+/F1 12 Tf
+72 608 Td
+(single programmable coordination layer. The protocol is designed around three goals:) Tj
+ET
+BT
+/F1 12 Tf
+72 590 Td
+(fast delivery, verifiable security, and sustainable operator incentives.) Tj
+ET
+BT
+/F1 12 Tf
+72 572 Td
+( ) Tj
+ET
+BT
+/F1 12 Tf
+72 554 Td
+(Entangle introduces a threshold-signed messaging primitive, a sealed-bid relay market,) Tj
+ET
+BT
+/F1 12 Tf
+72 536 Td
+(and a dynamic fee engine that distributes rewards between protocol infrastructure and) Tj
+ET
+BT
+/F1 12 Tf
+72 518 Td
+(delivery operators. The result is a system that feels simple to developers while still) Tj
+ET
+BT
+/F1 12 Tf
+72 500 Td
+(remaining transparent and measurable for node operators and ecosystem stakeholders.) Tj
+ET
+BT
+/F1 18 Tf
+72 454 Td
+(Problem Statement) Tj
+ET
+BT
+/F1 12 Tf
+72 428 Td
+(Modern blockchains remain fragmented. Assets, applications, and user intent are locked) Tj
+ET
+BT
+/F1 12 Tf
+72 410 Td
+(inside isolated execution environments. Traditional bridge systems often rely on trusted) Tj
+ET
+BT
+/F1 12 Tf
+72 392 Td
+(multisigs, opaque relayers, or brittle message verification assumptions. This creates) Tj
+ET
+BT
+/F1 12 Tf
+72 374 Td
+(security risk, integration overhead, and poor end-user experience for omnichain apps.) Tj
+ET
+BT
+/F1 18 Tf
+72 328 Td
+(Design Principles) Tj
+ET
+BT
+/F1 12 Tf
+88 302 Td
+(1. One developer interface across many chains.) Tj
+ET
+BT
+/F1 12 Tf
+88 284 Td
+(2. No single validator or relay should control message delivery.) Tj
+ET
+BT
+/F1 12 Tf
+88 266 Td
+(3. Performance and operator quality should be measurable and rewarded.) Tj
+ET
+BT
+/F1 12 Tf
+88 248 Td
+(4. Fee revenue should support a long-lived network beyond pure token emissions.) Tj
+ET
+BT
+/F1 11 Tf
+72 120 Td
+(This document is sample whitepaper content created for demonstration purposes.) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 1958 >>
+stream
+BT
+/F1 24 Tf
+72 742 Td
+(System Overview) Tj
+ET
+BT
+/F1 12 Tf
+72 706 Td
+(Entangle is composed of four coordinated layers:) Tj
+ET
+BT
+/F1 16 Tf
+72 666 Td
+(Application Layer) Tj
+ET
+BT
+/F1 12 Tf
+72 642 Td
+(Developers integrate through a minimal sendMessage-style interface. A source contract) Tj
+ET
+BT
+/F1 12 Tf
+72 624 Td
+(encodes destination metadata and payload, then pays the required native fee to dispatch) Tj
+ET
+BT
+/F1 12 Tf
+72 606 Td
+(a verifiable cross-chain message into the protocol.) Tj
+ET
+BT
+/F1 16 Tf
+72 566 Td
+(Scanner Layer) Tj
+ET
+BT
+/F1 12 Tf
+72 542 Td
+(Scanner miners continuously watch connected chains for Entangle-compatible events.) Tj
+ET
+BT
+/F1 12 Tf
+72 524 Td
+(They filter malformed payloads, confirm origin contracts, and forward valid dispatches) Tj
+ET
+BT
+/F1 12 Tf
+72 506 Td
+(into the validator network.) Tj
+ET
+BT
+/F1 16 Tf
+72 466 Td
+(Validation Layer) Tj
+ET
+BT
+/F1 12 Tf
+72 442 Td
+(Validators inspect scanner-fed events and produce threshold signatures over message) Tj
+ET
+BT
+/F1 12 Tf
+72 424 Td
+(hashes. This allows destination-side contracts to verify that a quorum approved delivery) Tj
+ET
+BT
+/F1 12 Tf
+72 406 Td
+(without trusting any single participant.) Tj
+ET
+BT
+/F1 16 Tf
+72 366 Td
+(Relay Layer) Tj
+ET
+BT
+/F1 12 Tf
+72 342 Td
+(Relay miners compete in a sealed-bid execution window. Each relay proposes a delivery) Tj
+ET
+BT
+/F1 12 Tf
+72 324 Td
+(strategy based on latency, gas efficiency, and likelihood of successful settlement.) Tj
+ET
+BT
+/F1 12 Tf
+72 306 Td
+(The winning relay executes the destination transaction and submits proof back on-chain.) Tj
+ET
+BT
+/F1 16 Tf
+72 250 Td
+(Security Assumptions) Tj
+ET
+BT
+/F1 12 Tf
+72 226 Td
+(Entangle assumes heterogeneous failures across scanners, validators, and relays.) Tj
+ET
+BT
+/F1 12 Tf
+72 208 Td
+(By separating roles and requiring threshold authorization, the protocol minimizes the) Tj
+ET
+BT
+/F1 12 Tf
+72 190 Td
+(blast radius of individual operator failure or malicious behavior.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 9 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 2132 >>
+stream
+BT
+/F1 24 Tf
+72 742 Td
+(Economics and Incentives) Tj
+ET
+BT
+/F1 16 Tf
+72 702 Td
+(Fee Engine) Tj
+ET
+BT
+/F1 12 Tf
+72 678 Td
+(Every dispatched message pays a native execution fee. A protocol-side fee engine prices) Tj
+ET
+BT
+/F1 12 Tf
+72 660 Td
+(delivery according to destination chain conditions, expected gas use, and confirmation) Tj
+ET
+BT
+/F1 12 Tf
+72 642 Td
+(requirements. Fees are denominated in the source or destination chain native asset.) Tj
+ET
+BT
+/F1 16 Tf
+72 598 Td
+(Reward Split) Tj
+ET
+BT
+/F1 12 Tf
+72 574 Td
+(A representative split routes 30 percent of collected fees into the protocol treasury and) Tj
+ET
+BT
+/F1 12 Tf
+72 556 Td
+(70 percent into a relay reserve. In parallel, external subnet emissions can reward scanner) Tj
+ET
+BT
+/F1 12 Tf
+72 538 Td
+(and relay operators based on measurable performance.) Tj
+ET
+BT
+/F1 16 Tf
+72 494 Td
+(Quality Scoring) Tj
+ET
+BT
+/F1 12 Tf
+72 470 Td
+(Operator performance is evaluated across latency, confirmation reliability, gas efficiency,) Tj
+ET
+BT
+/F1 12 Tf
+72 452 Td
+(payload integrity, and historical uptime. These signals inform auction outcomes, relay) Tj
+ET
+BT
+/F1 12 Tf
+72 434 Td
+(reputation, and optional long-term rewards.) Tj
+ET
+BT
+/F1 16 Tf
+72 390 Td
+(Token Utility) Tj
+ET
+BT
+/F1 12 Tf
+72 366 Td
+(A future Entangle token could coordinate governance, parameter voting, operator bonding,) Tj
+ET
+BT
+/F1 12 Tf
+72 348 Td
+(and treasury stewardship. Token utility should complement fee revenue rather than replace) Tj
+ET
+BT
+/F1 12 Tf
+72 330 Td
+(it, ensuring the system can remain economically relevant under multiple market regimes.) Tj
+ET
+BT
+/F1 16 Tf
+72 274 Td
+(Roadmap) Tj
+ET
+BT
+/F1 12 Tf
+72 250 Td
+(Phase 1 focuses on testnet deployments, validator coordination, and reference integrations.) Tj
+ET
+BT
+/F1 12 Tf
+72 232 Td
+(Phase 2 expands mainnet coverage and activates live relay competition. Phase 3 introduces) Tj
+ET
+BT
+/F1 12 Tf
+72 214 Td
+(governance tooling, new adapters, and more advanced proof systems.) Tj
+ET
+BT
+/F1 16 Tf
+72 158 Td
+(Conclusion) Tj
+ET
+BT
+/F1 12 Tf
+72 134 Td
+(Entangle aims to make omnichain messaging feel native, verifiable, and incentive aligned.) Tj
+ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000323 00000 n 
+0000002542 00000 n 
+0000002668 00000 n 
+0000004678 00000 n 
+0000004804 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+6988
+%%EOF
