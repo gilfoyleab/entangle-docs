@@ -44,7 +44,7 @@ export function DocNavbar({ onMenuToggle }: DocNavbarProps) {
             <Menu className="w-5 h-5 text-[var(--muted-foreground)]" />
           </button>
 
-          <Link href="/docs/overview" className="flex items-center gap-2.5 group">
+          <Link href="/docs/introduction" className="flex items-center gap-2.5 group">
             <Image
               src="/entangle-logo.png"
               alt="Entangle logo"

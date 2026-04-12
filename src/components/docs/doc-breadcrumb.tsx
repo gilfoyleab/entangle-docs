@@ -9,7 +9,7 @@ interface DocBreadcrumbProps {
 export function DocBreadcrumb({ sectionTitle, title }: DocBreadcrumbProps) {
   return (
     <nav className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] mb-6">
-      <Link href="/docs/overview" className="hover:text-[var(--foreground)] transition-colors">
+      <Link href="/docs/introduction" className="hover:text-[var(--foreground)] transition-colors">
         Docs
       </Link>
       {sectionTitle && (

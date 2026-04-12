@@ -10,10 +10,10 @@ export default function NotFound() {
           The doc page you asked for does not exist in this Entangle docs build.
         </p>
         <Link
-          href="/docs/overview"
+          href="/docs/introduction"
           className="inline-flex rounded-full border border-white bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-neutral-200"
         >
-          Back to overview
+          Back to introduction
         </Link>
       </div>
     </main>
